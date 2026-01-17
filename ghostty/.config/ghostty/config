@@ -1,34 +1,69 @@
-font-size = 13
-font-family = "JetBrains Mono Nerd Font"
-cursor-style = block
 
-# Enables font ligatures for JetBrains Mono
+# =========================
+# Ghostty config (base)
+# =========================
+
+# -------- Typography --------
+font-family = "JetBrains Mono Nerd Font"
+font-size = 13
+
+# Enable ligatures (JetBrains Mono)
 font-feature = "calt"
 font-feature = "liga"
 
-# Removes the native OS title bar for a flush look
-window-decoration = false
+# Cursor
+cursor-style = block
+cursor-style-blink = true
 
-# Adds a small internal margin (padding)
+# -------- Window / UI --------
+window-decoration = false
 window-padding-x = 10
 window-padding-y = 10
 
-# Prevents the window from snapping to character grid sizes 
-# (removes those weird gaps at the edges when resizing)
+# Smooth resizing (avoids weird gaps)
 window-step-resize = true
-# Makes the cursor blink with a smooth fade
-cursor-style-blink = true
-# Hides the mouse cursor immediately when you start typing
-mouse-hide-while-typing = true
-# Quick copy-on-select (standard in many pro terminals)
-copy-on-select = true
-# Focuses the window when you hover over it (optional, but very "Linux-pro")
-focus-follows-mouse = true
-# Adds a subtle transparency (0.0 to 1.0)
+
+# Transparency / blur (Wayland-friendly)
 background-opacity = 0.95
-# Blurs the background behind the window
 background-blur = 20
-# Increase the amount of history saved in the buffer
-scrollback-limit = 100000
-# Clickable URLs (hold Cmd/Ctrl + click to open)
+
+# -------- Mouse / Selection --------
+# Hide mouse while typing
+mouse-hide-while-typing = true
+
+# Copy when selecting text (many people love this; if not, set false)
+copy-on-select = true
+
+# Focus follows mouse (comment out if it ever annoys you)
+focus-follows-mouse = true
+
+# -------- Links --------
+# Ctrl/Cmd + click URLs
 link-url = true
+
+# -------- Scrollback --------
+# Bigger scrollback for logs
+scrollback-limit = 200000
+
+# -------- Keybindings (QoL) --------
+# Word-jump keys that feel "normal" in bash/readline apps
+# If any of these error in your Ghostty version, just comment the line.
+keybind = ctrl+left=esc:b
+keybind = ctrl+right=esc:f
+keybind = alt+backspace=esc:backspace
+
+# -------- Font Zoom --------
+
+# Ctrl + mouse wheel zoom
+mouse-bind = ctrl+scroll_up=increase_font_size
+mouse-bind = ctrl+scroll_down=decrease_font_size
+
+# Keyboard-only zoom (muscle-memory friendly)
+keybind = ctrl+equal=increase_font_size
+keybind = ctrl+minus=decrease_font_size
+keybind = ctrl+0=reset_font_size
+
+# -------- Safety / Behavior --------
+# Don’t nag on close (set true if you want a confirm prompt)
+confirm-close-surface = false
+

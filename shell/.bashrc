@@ -10,5 +10,5 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 export PATH="$HOME/.local/bin:$PATH"
 alias dot='cd ~/dotfiles && stow --restow hypr && cd -'
-eval "$(starship init zsh)"
 eval "$(starship init bash)"
+
