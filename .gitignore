@@ -1,0 +1,31 @@
+# Compiled binaries and object files
+*.o
+*.so
+*.bin
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS generated files
+.DS_Store
+.directory
+desktop.ini
+
+# Caches and temporary files
+.cache/
+*.tmp
+*.swp
+*.bak
+*~
+
+# Sensitive information (Safety first!)
+*.pem
+*.key
+secrets.conf
+.env
+
+# Specific app clutter
+.netrc
+.wget-hsts
