@@ -1,0 +1,6 @@
+[user]
+	name = Sean Griffin
+	email = seangriffin@thehedgeknightsllc.com
+[core]
+	pager = cat
+	excludesfile = /home/hedgekinght/.gitignore_global

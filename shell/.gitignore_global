@@ -1,0 +1,5 @@
+.cache/
+.mozilla/
+.local/state/
+.local/share/Trash/
+.bash_history

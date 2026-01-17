@@ -1,0 +1,13 @@
+show=drun
+prompt=Run
+width=50
+lines=12
+location=center
+allow_images=false
+hide_scroll=true
+drun-categories=Utility;System;Network;
+matching=fuzzy
+
+
+#Hide common system/network junk
+exclude=avahi;nm-;network;ssh;vnc;server

@@ -1,0 +1,24 @@
+* {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+window#waybar {
+  background: #1e1e1e;
+  color: #dcdcdc;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  background: transparent;
+  color: #888;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+}
+
+#clock, #bluetooth {
+  padding: 0 10px;
+}
+

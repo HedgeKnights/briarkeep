@@ -1,0 +1,47 @@
+/* General */
+* {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* Window */
+window {
+  background-color: #1e1e1e;
+  border: 2px solid #3a3a3a;
+  border-radius: 6px;
+}
+
+/* Outer box */
+#outer-box {
+  padding: 10px;
+}
+
+/* Input bar */
+#input {
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+/* Entry list */
+#entry {
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+/* Selected entry */
+#entry:selected {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+/* Text */
+#text {
+  color: #dcdcdc;
+}
+#expander {
+  color: transparent;
+}
+
