@@ -29,3 +29,13 @@ secrets.conf
 # Specific app clutter
 .netrc
 .wget-hsts
+
+# PulseAudio runtime artifacts
+.config/pulse/
+
+# Shell history
+.bash_history
+
+# Python
+__pycache__/
+

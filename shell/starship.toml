@@ -1,0 +1,18 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Customizing the prompt character
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[➜](bold red) "
+
+# Clean directory display
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+# Git integration (requires Nerd Font for the icon)
+[git_branch]
+symbol = " "
+style = "bold purple"
