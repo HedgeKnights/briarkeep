@@ -1,23 +1,25 @@
+
+-- =========================
+-- Leader
+-- =========================
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- Set up the runtime path to include Lazy.nvim
+
+
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
 vim.opt.rtp:prepend(lazypath)
 
--- Now set up Lazy.nvim
-require('lazy').setup({
-  -- Add NvimTree plugin
-{
-  'nvim-tree/nvim-tree.lua',
-  config = function()
-    require('nvim-tree').setup {}
-    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "NvimTree: Toggle" })
-  end
-},
-    -- You can add other plugins here later if you want
-})
-
--- General Settings
--- Editor Settings
-vim.o.number = true
+-- Load plugins
+require("lazy").setup("plugins")
 
