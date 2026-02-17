@@ -1,18 +1,48 @@
-# Don't print a new line at the start of the prompt
 add_newline = false
+command_timeout = 1000
 
-# Customizing the prompt character
-[character]
-success_symbol = "[➜](bold green) "
-error_symbol = "[➜](bold red) "
+format = "$directory$git_branch$git_status$cmd_duration$jobs$status\n$character"
 
-# Clean directory display
 [directory]
-style = "bold cyan"
 truncation_length = 3
 truncate_to_repo = true
+style = "bold"
+read_only = " "
 
-# Git integration (requires Nerd Font for the icon)
 [git_branch]
 symbol = " "
-style = "bold purple"
+format = " [$symbol$branch]($style)"
+style = "dimmed"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style))"
+style = "dimmed"
+stashed = "≡"
+modified = "*"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+untracked = "?"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+
+[cmd_duration]
+min_time = 1500
+format = " [⏱ $duration]($style)"
+style = "dimmed"
+
+[jobs]
+symbol = "✦"
+format = " [$symbol$number]($style)"
+style = "dimmed"
+
+[status]
+disabled = false
+format = " [$status]($style)"
+style = "bold red"
+
+[character]
+success_symbol = "[❯](bold)"
+error_symbol = "[❯](bold red)"
+

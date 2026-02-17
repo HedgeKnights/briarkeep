@@ -52,17 +52,6 @@ keybind = ctrl+left=esc:b
 keybind = ctrl+right=esc:f
 keybind = alt+backspace=esc:backspace
 
-# -------- Font Zoom --------
-
-# Ctrl + mouse wheel zoom
-mouse-bind = ctrl+scroll_up=increase_font_size
-mouse-bind = ctrl+scroll_down=decrease_font_size
-
-# Keyboard-only zoom (muscle-memory friendly)
-keybind = ctrl+equal=increase_font_size
-keybind = ctrl+minus=decrease_font_size
-keybind = ctrl+0=reset_font_size
-
 # -------- Safety / Behavior --------
 # Don’t nag on close (set true if you want a confirm prompt)
 confirm-close-surface = false
