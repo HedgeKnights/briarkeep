@@ -1,32 +1,28 @@
 {
   "layer": "top",
   "position": "top",
-
-  "modules-left": ["hyprland/workspaces"],
+  "height": 34,
+  "spacing": 4,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
-  "modules-right": ["bluetooth"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
 
   "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "format": "{icon}",
+    "format": "{name}",
+    "on-click": "activate"
+  },
+
+"clock": {
+  "format": "{:%I:%M %p}",
+  "format-alt": "{:%a %b %d %I:%M %p}",
+  "tooltip-format": "{:%A, %B %d, %Y %I:%M:%S %p}",
+  "on-click-right": "mode"
+},
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
     "format-icons": {
-      "active": "●",
-      "default": "○"
-    }
-  },
-
-  "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%Y-%m-%d}",
-    "tooltip-format": "{:%A, %B %d, %Y}"
-  },
-
-  "bluetooth": {
-    "format-on": "",
-    "format-off": "",
-    "format-disabled": "",
-    "tooltip": true
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
   }
 }
-

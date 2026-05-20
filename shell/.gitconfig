@@ -3,4 +3,4 @@
 	email = seangriffin@thehedgeknightsllc.com
 [core]
 	pager = cat
-	excludesfile = /home/hedgekinght/.gitignore_global
+	excludesfile = /home/hedgeknight/.gitignore_global
