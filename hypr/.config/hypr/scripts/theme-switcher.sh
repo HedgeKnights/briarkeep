@@ -1,7 +1,6 @@
 #!/bin/bash
 THEME_DIR="$HOME/.config/hypr/themes"
-WALL_DIR="$HOME/.config/hypr/wallpapers"
-
+WALL_DIR="$HOME/Pictures/wallpapers"
 # 1. Get choice
 CHOICE=$(ls "$THEME_DIR" | grep ".conf" | grep -v "current_theme.conf" | sed 's/\.conf//' | wofi --show dmenu -p "Select Theme")
 
@@ -20,16 +19,13 @@ if [ -n "$CHOICE" ]; then
         waybar &
     fi
 
-    # 4. Wallpaper Logic (swww)
-    if ! pgrep -x swww-daemon > /dev/null; then
-        swww-daemon &
-        sleep 0.5
-    fi
-    
-    swww img "$WALL_DIR/$CHOICE.jpg" \
-        --transition-type grow \
-        --transition-pos top-right \
-        --transition-duration 2
+  # 4. Wallpaper Logic (awww)
+if ! pgrep -x awww-daemon > /dev/null; then
+    awww-daemon &
+    sleep 0.5
+fi
+
+awww img --transition-type fade "$WALL_DIR/$CHOICE.jpg"
 
     # 5. Notify
     notify-send "Hyprland" "Theme swapped to $CHOICE"
