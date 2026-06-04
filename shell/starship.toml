@@ -4,7 +4,7 @@ command_timeout = 1000
 format = "$directory$git_branch$git_status$cmd_duration$jobs$status\n$character"
 
 [directory]
-truncation_length = 3
+truncation_length = 0
 truncate_to_repo = true
 style = "bold"
 read_only = " "
