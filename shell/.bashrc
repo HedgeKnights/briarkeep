@@ -12,3 +12,4 @@ export PATH="$HOME/.local/bin:$PATH"
 alias dot='cd ~/dotfiles && stow --restow hypr && cd -'
 eval "$(starship init bash)"
 
+export PATH=~/.npm-global/bin:$PATH

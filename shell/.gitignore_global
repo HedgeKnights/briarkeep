@@ -3,3 +3,5 @@
 .local/state/
 .local/share/Trash/
 .bash_history
+
+**/.claude/settings.local.json
