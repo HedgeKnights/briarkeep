@@ -7,8 +7,6 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-export PATH="$HOME/.local/bin:$PATH"
-alias dot='cd ~/dotfiles && stow --restow hypr && cd -'
+export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+alias dot='cd ~/dotfiles && stow --restow gammastep ghostty gtk hypr nvim scripts shell systemd thunar waybar wofi && cd -'
 eval "$(starship init bash)"
-
-export PATH=~/.npm-global/bin:$PATH

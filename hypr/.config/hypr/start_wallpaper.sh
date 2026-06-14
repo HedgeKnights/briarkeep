@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pkill awww-daemon
+pkill awww-daemon || true
 
 awww-daemon &
 
