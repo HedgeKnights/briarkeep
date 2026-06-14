@@ -1,6 +1,6 @@
 show=drun
 prompt=Run
-width=50
+width=400
 lines=12
 location=center
 allow_images=false
@@ -8,6 +8,5 @@ hide_scroll=true
 drun-categories=Utility;System;Network;
 matching=fuzzy
 
-
-#Hide common system/network junk
+# hide common system/network junk
 exclude=avahi;nm-;network;ssh;vnc;server

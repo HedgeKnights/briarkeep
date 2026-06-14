@@ -1,47 +1,49 @@
-/* General */
 * {
   font-family: monospace;
   font-size: 14px;
 }
 
-/* Window */
 window {
   background-color: #1e1e1e;
-  border: 2px solid #3a3a3a;
-  border-radius: 6px;
+  border: 2px solid #cba6f7;
+  border-radius: 10px;
 }
 
-/* Outer box */
 #outer-box {
   padding: 10px;
 }
 
-/* Input bar */
 #input {
-  margin-bottom: 10px;
-  padding: 6px 8px;
+  margin-bottom: 8px;
+  padding: 5px 7px;
   background-color: #2a2a2a;
-  color: #ffffff;
-  border-radius: 4px;
+  color: #cdd6f4;
+  border: none;
+  border-radius: 6px;
+  outline: none;
 }
 
-/* Entry list */
+#input:focus {
+  border: 1px solid #cba6f7;
+}
+
 #entry {
-  padding: 6px 8px;
-  border-radius: 4px;
+  padding: 5px 7px;
+  border-radius: 6px;
 }
 
-/* Selected entry */
 #entry:selected {
-  background-color: #3a3a3a;
-  color: #ffffff;
+  background-color: #313244;
 }
 
-/* Text */
 #text {
-  color: #dcdcdc;
+  color: #cdd6f4;
 }
+
+#entry:selected #text {
+  color: #cba6f7;
+}
+
 #expander {
   color: transparent;
 }
-
