@@ -17,8 +17,9 @@ cursor-style-blink = true
 
 # -------- Window / UI --------
 window-decoration = false
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 24
+window-padding-y = 16
+window-padding-balance = true
 
 # Smooth resizing (avoids weird gaps)
 window-step-resize = true
