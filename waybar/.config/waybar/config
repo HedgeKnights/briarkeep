@@ -12,17 +12,39 @@
     "on-click": "activate"
   },
 
-"clock": {
-  "format": "{:%I:%M %p}",
-  "format-alt": "{:%a %b %d %I:%M %p}",
-  "tooltip-format": "{:%A, %B %d, %Y %I:%M:%S %p}",
-  "on-click-right": "mode"
-},
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a %b %d %I:%M %p}",
+    "tooltip-format": "{:%A, %B %d, %Y %I:%M:%S %p}",
+    "on-click-right": "mode",
+    "on-click-middle": "notify-send Date $(date +%m/%d/%Y)"
+  },
+
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ifname} ",
+    "format-disconnected": "disconnected ⚠",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "{}% "
+  },
+
+  "tray": {
+    "spacing": 10
   }
 }
