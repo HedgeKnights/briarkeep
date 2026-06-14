@@ -39,4 +39,20 @@ if ! pgrep -x awww-daemon > /dev/null; then
 fi
 awww img --transition-type fade "$WALL"
 
+# Reload Ghostty theme
+GHOSTTY_THEME=$(cat "$THEME_DIR/current/ghostty-theme" 2>/dev/null | tr -d '\n')
+if [ -n "$GHOSTTY_THEME" ]; then
+    mkdir -p "$HOME/.cache/ghostty"
+    echo "theme = $GHOSTTY_THEME" > "$HOME/.cache/ghostty/theme.conf"
+    pkill -SIGUSR2 ghostty 2>/dev/null || true
+fi
+
+# Reload running nvim instances
+NVIM_THEME=$(cat "$THEME_DIR/current/nvim-theme" 2>/dev/null | tr -d '[:space:]')
+if [ -n "$NVIM_THEME" ]; then
+  for sock in $(find /tmp -maxdepth 3 -name 'nvim.*.0' -type s 2>/dev/null); do
+    nvim --server "$sock" --remote-send ":lua require('theme').reload()<CR>" 2>/dev/null || true
+  done
+fi
+
 notify-send "Hyprland" "Theme: $CHOICE"

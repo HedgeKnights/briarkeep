@@ -57,3 +57,7 @@ keybind = alt+backspace=esc:backspace
 # Don’t nag on close (set true if you want a confirm prompt)
 confirm-close-surface = false
 
+# -------- Theme --------
+# Managed by theme switcher — writes ~/.config/ghostty/theme.conf
+config-file = ~/.cache/ghostty/theme.conf
+

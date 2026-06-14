@@ -1,19 +1,34 @@
 local M = {}
 
+local function get_flavour()
+  local theme_file = vim.fn.expand("~/.config/hypr/themes/current/nvim-theme")
+  local f = io.open(theme_file, "r")
+  if f then
+    local flavour = vim.trim(f:read("*l") or "")
+    f:close()
+    if flavour ~= "" then return flavour end
+  end
+  return "mocha"
+end
+
 function M.setup()
   require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    transparent_background = true, -- Matches Ghostty's background
+    flavour = get_flavour(),
+    transparent_background = true,
     term_colors = true,
     integrations = {
       nvimtree = true,
       treesitter = true,
       telescope = { enabled = true },
-      -- Add more integrations as you add plugins
     },
   })
 
-  -- Actually activate the theme
+  vim.cmd.colorscheme "catppuccin"
+end
+
+function M.reload()
+  local flavour = get_flavour()
+  require("catppuccin").setup({ flavour = flavour, transparent_background = true, term_colors = true })
   vim.cmd.colorscheme "catppuccin"
 end
 

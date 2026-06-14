@@ -9,6 +9,13 @@ fi
 ln -sf "$THEME_DIR/current/waybar.css" "$HOME/.config/waybar/style.css"
 ln -sf "$THEME_DIR/current/wofi.css"   "$HOME/.config/wofi/style.css"
 
+# Restore Ghostty theme from current theme file
+GHOSTTY_THEME=$(cat "$THEME_DIR/current/ghostty-theme" 2>/dev/null | tr -d '\n')
+if [ -n "$GHOSTTY_THEME" ]; then
+    mkdir -p "$HOME/.cache/ghostty"
+    echo "theme = $GHOSTTY_THEME" > "$HOME/.cache/ghostty/theme.conf"
+fi
+
 pkill awww-daemon || true
 awww-daemon &
 sleep 1
