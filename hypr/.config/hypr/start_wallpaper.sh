@@ -4,7 +4,7 @@ WALL_DIR="$HOME/Pictures/wallpapers"
 
 # Bootstrap current symlink and app styles if missing (e.g. fresh stow)
 if [ ! -L "$THEME_DIR/current" ]; then
-    ln -sfn "$THEME_DIR/glass" "$THEME_DIR/current"
+    (cd "$THEME_DIR" && ln -sfn glass current)
 fi
 ln -sf "$THEME_DIR/current/waybar.css" "$HOME/.config/waybar/style.css"
 ln -sf "$THEME_DIR/current/wofi.css"   "$HOME/.config/wofi/style.css"

@@ -8,8 +8,8 @@ CHOICE=$(find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d \
 
 [ -z "$CHOICE" ] && exit 0
 
-# Switch active theme
-ln -sfn "$THEME_DIR/$CHOICE" "$THEME_DIR/current"
+# Switch active theme (relative symlink so Hyprland's glob can resolve it)
+ln -sfn "$CHOICE" "$THEME_DIR/current"
 
 # Apply per-app styles
 ln -sf "$THEME_DIR/current/waybar.css" "$HOME/.config/waybar/style.css"
