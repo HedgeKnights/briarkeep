@@ -1,9 +1,0 @@
-window#waybar {
-    background: #111111; /* Solid dark grey */
-    border-bottom: 1px solid #333333;
-    color: #ffffff;
-}
-#workspaces button.active {
-    color: #ffffff;
-    background: #333333;
-}

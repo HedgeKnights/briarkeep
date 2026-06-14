@@ -33,6 +33,11 @@ secrets.conf
 # PulseAudio runtime artifacts
 .config/pulse/
 
+# Theme runtime symlinks (managed by theme-switcher / start_wallpaper.sh)
+hypr/.config/hypr/themes/current
+waybar/.config/waybar/style.css
+wofi/.config/wofi/style.css
+
 # Shell history
 .bash_history
 

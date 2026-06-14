@@ -6,29 +6,23 @@
 }
 
 window#waybar {
-    /* Smoked Glass effect */
-    background: rgba(20, 20, 20, 0.5); 
-    border-bottom: 2px solid rgba(136, 51, 255, 0.8); /* Match your purple border */
+    background: #111111;
+    border-bottom: 1px solid #333333;
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
     color: #888888;
-    border-bottom: 3px solid transparent;
 }
 
 #workspaces button.active {
     color: #ffffff;
-    border-bottom: 3px solid #ff00ff; /* Pink accent */
+    background: #333333;
 }
 
 #clock, #pulseaudio, #network, #cpu, #memory, #tray {
     padding: 0 10px;
     margin: 4px 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
 }
