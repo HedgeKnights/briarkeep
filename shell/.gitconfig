@@ -4,3 +4,4 @@
 [core]
 	pager = cat
 	excludesfile = /home/hedgeknight/.gitignore_global
+	editor = nvim
