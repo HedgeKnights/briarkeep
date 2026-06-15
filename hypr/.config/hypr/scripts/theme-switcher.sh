@@ -55,4 +55,47 @@ if [ -n "$NVIM_THEME" ]; then
   done
 fi
 
+# btop - update config and signal reload
+BTOP_THEME=$(cat "$THEME_DIR/current/btop-theme" 2>/dev/null | tr -d '[:space:]')
+if [ -n "$BTOP_THEME" ]; then
+    BTOP_CONF="$HOME/.config/btop/btop.conf"
+    if [ -f "$BTOP_CONF" ]; then
+        sed -i "s/^color_theme = .*/color_theme = \"$BTOP_THEME\"/" "$BTOP_CONF"
+        pkill -SIGUSR1 btop 2>/dev/null || true
+    fi
+fi
+
+# htop - update color scheme (takes effect on next launch)
+HTOP_SCHEME=$(cat "$THEME_DIR/current/htop-colorscheme" 2>/dev/null | tr -d '[:space:]')
+if [ -n "$HTOP_SCHEME" ]; then
+    HTOP_RC="$HOME/.config/htop/htoprc"
+    if [ -f "$HTOP_RC" ]; then
+        sed -i "s/^color_scheme=.*/color_scheme=$HTOP_SCHEME/" "$HTOP_RC"
+    fi
+fi
+
+# GTK - update settings.ini and signal running apps
+GTK_THEME=$(cat "$THEME_DIR/current/gtk-theme" 2>/dev/null | tr -d '[:space:]')
+if [ -n "$GTK_THEME" ]; then
+    GTK_CONF="$HOME/.config/gtk-3.0/settings.ini"
+    if [ -f "$GTK_CONF" ]; then
+        sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$GTK_THEME/" "$GTK_CONF"
+    fi
+    gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME" 2>/dev/null || true
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" 2>/dev/null || true
+fi
+
+# Spotify via Spicetify
+SPOTIFY_THEME_RAW=$(cat "$THEME_DIR/current/spotify-theme" 2>/dev/null | tr -d '[:space:]')
+if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then
+    if [[ "$SPOTIFY_THEME_RAW" == *:* ]]; then
+        SPICETIFY_THEME="${SPOTIFY_THEME_RAW%%:*}"
+        SPICETIFY_SCHEME="${SPOTIFY_THEME_RAW#*:}"
+        spicetify config current_theme "$SPICETIFY_THEME" color_scheme "$SPICETIFY_SCHEME" 2>/dev/null
+    else
+        spicetify config current_theme "$SPOTIFY_THEME_RAW" 2>/dev/null
+    fi
+    spicetify apply 2>/dev/null || true
+fi
+
 notify-send "Hyprland" "Theme: $CHOICE"
