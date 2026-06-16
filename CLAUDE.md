@@ -14,7 +14,7 @@
 - shell/ — bashrc, starship, gitconfig
 - gtk/, gammastep/, thunar/, systemd/
 - btop/ — added; stow btop done
-- htop/ — added; needs `stow htop` (sandbox blocked it)
+- htop/ — added; stow htop done
 
 ## Rules
 - Always edit files in ~/dotfiles, not ~/.config
@@ -51,35 +51,22 @@ Background was rgba(26,35,24) — too dark, looked black. Changed to rgba(42,60,
 - glass → Sleek:Deeper
 - minimal → Matte:rose-pine-moon
 
-### Spicetify — needs one manual step
-Spicetify is installed and configured but Spotify has never been patched. Run:
-```
-spicetify apply
-```
-After that the theme switcher handles it automatically on every switch.
+### Spicetify — done
+First-time `spicetify apply` has been run. Theme switcher handles all future switches automatically.
 
-### Obsidian — needs one-time setup
-Snippets directory and appearance.json need to be initialised once:
-```
-mkdir -p ~/Obsidian_Tower/.obsidian/snippets
-jq '. + {"enabledCssSnippets": ["active-theme"]}' \
-  ~/Obsidian_Tower/.obsidian/appearance.json > /tmp/appearance.json && \
-  mv /tmp/appearance.json ~/Obsidian_Tower/.obsidian/appearance.json
-```
-After that the switcher copies obsidian.css into the snippets dir and Obsidian hot-reloads it.
+### Obsidian — done
+Snippets dir created and appearance.json wired up. Switcher copies obsidian.css on every theme switch.
 
 ### Next up
-- Discord — needs Vencord installed first, then CSS per theme (same copy pattern as Obsidian)
+- Discord — Vencord AUR package installed; needs VencordInstaller run to inject into Discord binary,
+  then `~/.config/Vencord/` will exist. Add per-theme CSS files and a copy step in the switcher
+  (same pattern as Obsidian). quickCss path: ~/.config/Vencord/settings/quickCss.css
+- Notifications — theme mako (Wayland notification daemon). Per-theme config or color overrides
+  written to ~/.config/mako/config on switch, then `makoctl reload`.
+- Login screen — clarify target: SDDM theme vs greetd. Apply per-system-theme on switch or as
+  a one-time aesthetic choice separate from the runtime theme switcher.
 
 ### Deferred
 - Steam — needs Millennium, complex
 - Zen browser — deferred
 - Kitty — low priority (backup terminal), trivial to add when wanted
-
-### Commit needed in ~/dotfiles
-Everything is staged but not committed. Run:
-```
-cd ~/dotfiles
-git add -A
-git commit -m "extend theme switcher: btop, htop, GTK, Spicetify, Obsidian"
-```
