@@ -59,12 +59,23 @@ Snippets dir created and appearance.json wired up. Switcher copies obsidian.css 
 
 ### Wired up and working (continued)
 - discord.css — copied to ~/.config/Vencord/settings/quickCss.css on switch; Vencord hot-reloads live
+- dunst-colors.conf — symlinked and reloaded via dunstctl reload on switch
+- hyprlock — blurred screenshot bg, clock/date overlay, catppuccin input field (Super+L)
+- hypridle — 4min dim, 5min lock, 10min suspend; exec-once in hyprland.conf
+
+### Sleep keybindings
+- Super+L — lock screen (hyprlock)
+- Super+Shift+Escape — suspend immediately
+
+### SDDM login screen
+- Theme: maldives with catppuccin.jpg wallpaper
+- One-time setup (requires sudo — not wired into theme switcher):
+  sudo mkdir -p /etc/sddm.conf.d && sudo sh -c 'echo "[Theme]\nCurrent=maldives" > /etc/sddm.conf.d/theme.conf'
+  sudo cp ~/Pictures/wallpapers/catppuccin.jpg /usr/share/sddm/themes/maldives/background.jpg
 
 ### Next up
-- Notifications — theme mako (Wayland notification daemon). Per-theme config or color overrides
-  written to ~/.config/mako/config on switch, then `makoctl reload`.
-- Login screen — clarify target: SDDM theme vs greetd. Apply per-system-theme on switch or as
-  a one-time aesthetic choice separate from the runtime theme switcher.
+- Steam — needs Millennium, complex
+- Zen browser — deferred
 
 ### Deferred
 - Steam — needs Millennium, complex
