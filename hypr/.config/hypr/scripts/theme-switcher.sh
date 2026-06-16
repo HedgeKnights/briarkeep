@@ -90,6 +90,13 @@ if [ -f "$OBSIDIAN_CSS" ] && [ -d "$OBSIDIAN_SNIPPETS" ]; then
     cp "$OBSIDIAN_CSS" "$OBSIDIAN_SNIPPETS/active-theme.css"
 fi
 
+# Discord via Vencord quickCss (Vencord hot-reloads quickCss.css automatically)
+DISCORD_CSS="$THEME_DIR/current/discord.css"
+VENCORD_QUICKCSS="$HOME/.config/Vencord/settings/quickCss.css"
+if [ -f "$DISCORD_CSS" ] && [ -d "$(dirname "$VENCORD_QUICKCSS")" ]; then
+    cp "$DISCORD_CSS" "$VENCORD_QUICKCSS"
+fi
+
 # Spotify via Spicetify — update config always; apply only if Spotify is already running
 SPOTIFY_THEME_RAW=$(cat "$THEME_DIR/current/spotify-theme" 2>/dev/null | tr -d '[:space:]')
 if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then

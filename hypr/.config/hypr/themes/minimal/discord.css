@@ -1,0 +1,26 @@
+/* Minimal */
+.theme-dark {
+    --background-primary: #111111;
+    --background-secondary: #0d0d0d;
+    --background-secondary-alt: #0a0a0a;
+    --background-tertiary: #0a0a0a;
+    --background-accent: #333333;
+    --background-floating: #0d0d0d;
+    --background-nested-floating: #111111;
+    --channeltextarea-background: #1a1a1a;
+
+    --text-normal: #e0e0e0;
+    --text-muted: #888888;
+    --text-link: #aaaaaa;
+    --header-primary: #ffffff;
+    --header-secondary: #cccccc;
+
+    --interactive-normal: #cccccc;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+    --interactive-muted: #444444;
+
+    --brand-experiment: #595959;
+    --brand-500: #595959;
+    --focus-primary: #888888;
+}

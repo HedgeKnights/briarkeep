@@ -1,0 +1,26 @@
+/* Glass */
+.theme-dark {
+    --background-primary: rgba(20, 20, 20, 0.85);
+    --background-secondary: rgba(15, 15, 15, 0.9);
+    --background-secondary-alt: rgba(10, 10, 10, 0.95);
+    --background-tertiary: rgba(10, 10, 10, 0.95);
+    --background-accent: rgba(136, 51, 255, 0.25);
+    --background-floating: rgba(15, 15, 15, 0.92);
+    --background-nested-floating: rgba(20, 20, 20, 0.88);
+    --channeltextarea-background: rgba(255, 255, 255, 0.07);
+
+    --text-normal: #ffffff;
+    --text-muted: #888888;
+    --text-link: #bb88ff;
+    --header-primary: #ffffff;
+    --header-secondary: #cccccc;
+
+    --interactive-normal: #cccccc;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ff00ff;
+    --interactive-muted: #555555;
+
+    --brand-experiment: #8833ff;
+    --brand-500: #8833ff;
+    --focus-primary: #ff00ff;
+}

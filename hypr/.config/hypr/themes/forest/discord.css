@@ -1,0 +1,26 @@
+/* Forest */
+.theme-dark {
+    --background-primary: #0d1a0b;
+    --background-secondary: #111f0e;
+    --background-secondary-alt: #0a1408;
+    --background-tertiary: #0a1408;
+    --background-accent: #2e3d28;
+    --background-floating: #111f0e;
+    --background-nested-floating: #0d1a0b;
+    --channeltextarea-background: #1a2a15;
+
+    --text-normal: #d4e8c2;
+    --text-muted: #5a7a45;
+    --text-link: #a3d977;
+    --header-primary: #d4e8c2;
+    --header-secondary: #9ab87a;
+
+    --interactive-normal: #d4e8c2;
+    --interactive-hover: #ffffff;
+    --interactive-active: #7ab648;
+    --interactive-muted: #2e3d28;
+
+    --brand-experiment: #7ab648;
+    --brand-500: #7ab648;
+    --focus-primary: #7ab648;
+}
