@@ -18,12 +18,10 @@ ln -sf "$THEME_DIR/current/wofi.css"   "$HOME/.config/wofi/style.css"
 # Reload Hyprland (sources current/hypr.conf)
 hyprctl reload
 
-# Reload waybar styles live
-if pgrep -x waybar > /dev/null; then
-    killall -SIGUSR2 waybar
-else
-    waybar &
-fi
+# Reload waybar with new CSS (kill+restart is more reliable than signals in 0.15)
+pkill -x waybar 2>/dev/null || true
+sleep 0.2
+waybar &>/dev/null &
 
 # Set wallpaper
 WALL_FILE="$THEME_DIR/current/wallpaper"
@@ -85,7 +83,14 @@ if [ -n "$GTK_THEME" ]; then
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" 2>/dev/null || true
 fi
 
-# Spotify via Spicetify
+# Obsidian - copy CSS snippet (Obsidian hot-reloads snippet files automatically)
+OBSIDIAN_CSS="$THEME_DIR/current/obsidian.css"
+OBSIDIAN_SNIPPETS="$HOME/Obsidian_Tower/.obsidian/snippets"
+if [ -f "$OBSIDIAN_CSS" ] && [ -d "$OBSIDIAN_SNIPPETS" ]; then
+    cp "$OBSIDIAN_CSS" "$OBSIDIAN_SNIPPETS/active-theme.css"
+fi
+
+# Spotify via Spicetify — update config always; apply only if Spotify is already running
 SPOTIFY_THEME_RAW=$(cat "$THEME_DIR/current/spotify-theme" 2>/dev/null | tr -d '[:space:]')
 if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then
     if [[ "$SPOTIFY_THEME_RAW" == *:* ]]; then
@@ -95,7 +100,9 @@ if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then
     else
         spicetify config current_theme "$SPOTIFY_THEME_RAW" 2>/dev/null
     fi
-    spicetify apply 2>/dev/null || true
+    if pgrep -x spotify &>/dev/null || pgrep -f spotify-launcher &>/dev/null; then
+        spicetify apply 2>/dev/null || true
+    fi
 fi
 
 notify-send "Hyprland" "Theme: $CHOICE"
