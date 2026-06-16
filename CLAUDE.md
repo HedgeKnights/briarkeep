@@ -57,10 +57,10 @@ First-time `spicetify apply` has been run. Theme switcher handles all future swi
 ### Obsidian — done
 Snippets dir created and appearance.json wired up. Switcher copies obsidian.css on every theme switch.
 
+### Wired up and working (continued)
+- discord.css — copied to ~/.config/Vencord/settings/quickCss.css on switch; Vencord hot-reloads live
+
 ### Next up
-- Discord — Vencord AUR package installed; needs VencordInstaller run to inject into Discord binary,
-  then `~/.config/Vencord/` will exist. Add per-theme CSS files and a copy step in the switcher
-  (same pattern as Obsidian). quickCss path: ~/.config/Vencord/settings/quickCss.css
 - Notifications — theme mako (Wayland notification daemon). Per-theme config or color overrides
   written to ~/.config/mako/config on switch, then `makoctl reload`.
 - Login screen — clarify target: SDDM theme vs greetd. Apply per-system-theme on switch or as
