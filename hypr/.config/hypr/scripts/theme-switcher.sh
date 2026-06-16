@@ -90,6 +90,14 @@ if [ -f "$OBSIDIAN_CSS" ] && [ -d "$OBSIDIAN_SNIPPETS" ]; then
     cp "$OBSIDIAN_CSS" "$OBSIDIAN_SNIPPETS/active-theme.css"
 fi
 
+# Dunst - symlink per-theme colors and live-reload
+DUNST_COLORS="$THEME_DIR/current/dunst-colors.conf"
+DUNST_CONF_DIR="$HOME/.config/dunst"
+if [ -f "$DUNST_COLORS" ] && [ -d "$DUNST_CONF_DIR" ]; then
+    ln -sf "$DUNST_COLORS" "$DUNST_CONF_DIR/dunst-colors.conf"
+    dunstctl reload "$DUNST_CONF_DIR/dunstrc" "$DUNST_CONF_DIR/dunst-colors.conf" 2>/dev/null || true
+fi
+
 # Discord via Vencord quickCss (Vencord hot-reloads quickCss.css automatically)
 DISCORD_CSS="$THEME_DIR/current/discord.css"
 VENCORD_QUICKCSS="$HOME/.config/Vencord/settings/quickCss.css"
