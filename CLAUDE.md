@@ -71,7 +71,7 @@ Snippets dir created and appearance.json wired up. Switcher copies obsidian.css 
 - Theme: maldives with catppuccin.jpg wallpaper
 - One-time setup (requires sudo — not wired into theme switcher):
   sudo mkdir -p /etc/sddm.conf.d && sudo sh -c 'echo "[Theme]\nCurrent=maldives" > /etc/sddm.conf.d/theme.conf'
-  sudo cp ~/Pictures/wallpapers/catppuccin.jpg /usr/share/sddm/themes/maldives/background.jpg
+  sudo cp ~/Images/wallpapers/catppuccin.jpg /usr/share/sddm/themes/maldives/background.jpg
 
 ### Next up
 - Steam — needs Millennium, complex

@@ -1,6 +1,6 @@
 #!/bin/bash
 THEME_DIR="$HOME/.config/hypr/themes"
-WALL_DIR="$HOME/Pictures/wallpapers"
+WALL_DIR="$HOME/Images/wallpapers"
 
 # Bootstrap current symlink and app styles if missing (e.g. fresh stow)
 if [ ! -L "$THEME_DIR/current" ]; then

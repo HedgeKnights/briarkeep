@@ -1,6 +1,6 @@
 #!/bin/bash
 THEME_DIR="$HOME/.config/hypr/themes"
-WALL_DIR="$HOME/Pictures/wallpapers"
+WALL_DIR="$HOME/Images/wallpapers"
 
 CHOICE=$(find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d \
   | xargs -I{} basename {} \
