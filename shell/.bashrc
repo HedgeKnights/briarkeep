@@ -13,3 +13,6 @@ alias dot='cd ~/dotfiles && stow --restow gammastep ghostty gtk hypr nvim script
 command -v fastfetch &>/dev/null && fastfetch
 
 eval "$(starship init bash)"
+
+bpoff() { printf '\e[?2004l'; }
+bpon() { printf '\e[?2004h'; }
