@@ -2,9 +2,9 @@
 THEME_DIR="$HOME/.config/hypr/themes"
 WALL_DIR="$HOME/Images/wallpapers"
 
-CHOICE=$(find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d \
-  | xargs -I{} basename {} \
-  | wofi --show dmenu -p "Select Theme")
+CHOICE=$(find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+  | sort \
+  | wofi --show dmenu -p "Select Theme" --lines 10)
 
 [ -z "$CHOICE" ] && exit 0
 
@@ -31,11 +31,13 @@ else
     WALL="$WALL_DIR/$CHOICE.jpg"
 fi
 
-if ! pgrep -x awww-daemon > /dev/null; then
-    awww-daemon &
-    sleep 0.5
+if [ -f "$WALL" ]; then
+    if ! pgrep -x awww-daemon > /dev/null; then
+        awww-daemon &
+        sleep 0.5
+    fi
+    awww img --transition-type fade "$WALL"
 fi
-awww img --transition-type fade "$WALL"
 
 # Reload Ghostty theme
 GHOSTTY_THEME=$(cat "$THEME_DIR/current/ghostty-theme" 2>/dev/null | tr -d '\n')
@@ -100,9 +102,9 @@ fi
 
 # Discord via Vencord quickCss (Vencord hot-reloads quickCss.css automatically)
 DISCORD_CSS="$THEME_DIR/current/discord.css"
-VENCORD_QUICKCSS="$HOME/.config/Vencord/settings/quickCss.css"
-if [ -f "$DISCORD_CSS" ] && [ -d "$(dirname "$VENCORD_QUICKCSS")" ]; then
-    cp "$DISCORD_CSS" "$VENCORD_QUICKCSS"
+VESKTOP_QUICKCSS="$HOME/.config/vesktop/settings/quickCss.css"
+if [ -f "$DISCORD_CSS" ] && [ -d "$(dirname "$VESKTOP_QUICKCSS")" ]; then
+    cp "$DISCORD_CSS" "$VESKTOP_QUICKCSS"
 fi
 
 # Spotify via Spicetify — update config always; apply only if Spotify is already running
@@ -115,9 +117,7 @@ if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then
     else
         spicetify config current_theme "$SPOTIFY_THEME_RAW" 2>/dev/null
     fi
-    if pgrep -x spotify &>/dev/null || pgrep -f spotify-launcher &>/dev/null; then
-        spicetify apply 2>/dev/null || true
-    fi
+    spicetify apply 2>/dev/null || true
 fi
 
 notify-send "Hyprland" "Theme: $CHOICE"

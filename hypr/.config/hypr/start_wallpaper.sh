@@ -17,8 +17,6 @@ if [ -n "$GHOSTTY_THEME" ]; then
 fi
 
 pkill awww-daemon || true
-awww-daemon &
-sleep 1
 
 if [ -f "$THEME_DIR/current/wallpaper" ]; then
     WALL="$WALL_DIR/$(cat "$THEME_DIR/current/wallpaper" | tr -d '[:space:]')"
@@ -26,4 +24,8 @@ else
     WALL="$WALL_DIR/glass.jpg"
 fi
 
-awww img --transition-type fade "$WALL"
+if [ -f "$WALL" ]; then
+    awww-daemon &
+    sleep 1
+    awww img --transition-type fade "$WALL"
+fi
