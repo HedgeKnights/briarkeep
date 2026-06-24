@@ -2,11 +2,17 @@
 THEME_DIR="$HOME/.config/hypr/themes"
 WALL_DIR="$HOME/Images/wallpapers"
 
-CHOICE=$(find "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+CHOICE=$(find -L "$THEME_DIR" -mindepth 1 -maxdepth 1 -type d ! -name 'current' -printf '%f\n' \
   | sort \
   | wofi --show dmenu -p "Select Theme" --lines 10)
 
 [ -z "$CHOICE" ] && exit 0
+
+# Validate choice is an actual theme directory
+if [ ! -d "$THEME_DIR/$CHOICE" ]; then
+    notify-send "Theme Switcher" "Unknown theme: $CHOICE" --urgency=critical
+    exit 1
+fi
 
 # Switch active theme (relative symlink so Hyprland's glob can resolve it)
 ln -sfn "$CHOICE" "$THEME_DIR/current"
@@ -100,11 +106,16 @@ if [ -f "$DUNST_COLORS" ] && [ -d "$DUNST_CONF_DIR" ]; then
     dunstctl reload "$DUNST_CONF_DIR/dunstrc" "$DUNST_CONF_DIR/dunst-colors.conf" 2>/dev/null || true
 fi
 
-# Discord via Vencord quickCss (Vencord hot-reloads quickCss.css automatically)
+# Discord via Vencord quickCss — requires Vesktop restart to take effect
 DISCORD_CSS="$THEME_DIR/current/discord.css"
 VESKTOP_QUICKCSS="$HOME/.config/vesktop/settings/quickCss.css"
 if [ -f "$DISCORD_CSS" ] && [ -d "$(dirname "$VESKTOP_QUICKCSS")" ]; then
     cp "$DISCORD_CSS" "$VESKTOP_QUICKCSS"
+    if pgrep -x vesktop > /dev/null; then
+        pkill -x vesktop
+        sleep 0.5
+        vesktop &>/dev/null &
+    fi
 fi
 
 # Spotify via Spicetify — update config always; apply only if Spotify is already running
@@ -118,6 +129,33 @@ if [ -n "$SPOTIFY_THEME_RAW" ] && command -v spicetify &>/dev/null; then
         spicetify config current_theme "$SPOTIFY_THEME_RAW" 2>/dev/null
     fi
     spicetify apply 2>/dev/null || true
+fi
+
+# Hyprlock - symlink per-theme config
+HYPRLOCK_CONF="$THEME_DIR/current/hyprlock.conf"
+if [ -f "$HYPRLOCK_CONF" ]; then
+    ln -sf "$HYPRLOCK_CONF" "$HOME/.config/hypr/hyprlock.conf"
+fi
+
+# Starship prompt - symlink per-theme config (takes effect on next shell prompt)
+STARSHIP_CONF="$THEME_DIR/current/starship.toml"
+if [ -f "$STARSHIP_CONF" ]; then
+    ln -sf "$STARSHIP_CONF" "$HOME/.config/starship.toml"
+fi
+
+# Zen Browser - copy per-theme userChrome and restart if running
+ZEN_CSS="$THEME_DIR/current/zen.css"
+ZEN_PROFILE_RPATH=$(awk -F'=' '/^Default=/{prof=substr($0, index($0,"=")+1)} /^Locked=1/{if(prof!="") {print prof; exit}}' \
+    "$HOME/.zen/installs.ini" 2>/dev/null)
+if [ -n "$ZEN_PROFILE_RPATH" ] && [ -f "$ZEN_CSS" ]; then
+    ZEN_CHROME_DIR="$HOME/.zen/$ZEN_PROFILE_RPATH/chrome"
+    mkdir -p "$ZEN_CHROME_DIR"
+    cp "$ZEN_CSS" "$ZEN_CHROME_DIR/userChrome.css"
+    if pgrep -x zen-browser > /dev/null; then
+        pkill -x zen-browser
+        sleep 0.5
+        zen-browser &>/dev/null &
+    fi
 fi
 
 notify-send "Hyprland" "Theme: $CHOICE"

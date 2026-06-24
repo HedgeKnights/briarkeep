@@ -57,7 +57,10 @@ Themes live in `~/.config/spicetify/Themes/`: catppuccin (catppuccin/spicetify),
 `overwrite_assets = 1` required globally (catppuccin and Dribbblish both have `assets/` dirs).
 `inject_theme_js = 1` required globally (catppuccin and Dribbblish both have `theme.js`).
 
+## Zen Browser notes
+`toolkit.legacyUserProfileCustomizations.stylesheets` must be true — written to the active profile's `user.js` as a one-time step (not stow-managed due to hash-named profile dir).
+Switcher discovers active profile from `~/.zen/installs.ini` (the `Locked=1` section's `Default=` value), copies `zen.css` to `<profile>/chrome/userChrome.css`, kills+relaunches zen-browser if running.
+
 ## Not wired — deferred
-- **Steam**: needs Millennium — deferred (complex)
-- **Zen browser**: deferred
+- **Steam**: Millennium wiring in progress
 - **Kitty**: low priority backup terminal, trivial to add when wanted

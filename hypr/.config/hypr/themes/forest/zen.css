@@ -1,0 +1,9 @@
+/* zen userChrome — forest */
+:root {
+  --zen-primary-color: #7ab648 !important;
+  --zen-toolbar-element-bg: rgba(122, 182, 72, 0.1) !important;
+  --zen-toolbar-element-bg-hover: rgba(122, 182, 72, 0.2) !important;
+  --toolbar-bgcolor: #1a2415 !important;
+  --lwt-text-color: #d4e8c2 !important;
+  --toolbarbutton-hover-background: rgba(122, 182, 72, 0.15) !important;
+}
