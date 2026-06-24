@@ -158,4 +158,23 @@ if [ -n "$ZEN_PROFILE_RPATH" ] && [ -f "$ZEN_CSS" ]; then
     fi
 fi
 
+# Millennium (Steam) - update active theme; takes effect on next Steam restart
+STEAM_THEME=$(cat "$THEME_DIR/current/steam-theme" 2>/dev/null | tr -d '[:space:]')
+MILLENNIUM_CONFIG="$HOME/.local/share/Steam/millennium/config.json"
+if [ -n "$STEAM_THEME" ]; then
+    if [ -f "$MILLENNIUM_CONFIG" ]; then
+        python3 -c "
+import json, sys
+with open('$MILLENNIUM_CONFIG') as f:
+    cfg = json.load(f)
+cfg.setdefault('themes', {})['activeTheme'] = '$STEAM_THEME'
+with open('$MILLENNIUM_CONFIG', 'w') as f:
+    json.dump(cfg, f, indent=4)
+" 2>/dev/null || true
+    else
+        mkdir -p "$(dirname "$MILLENNIUM_CONFIG")"
+        printf '{"themes":{"activeTheme":"%s","allowedStyles":true,"allowedScripts":true}}\n' "$STEAM_THEME" > "$MILLENNIUM_CONFIG"
+    fi
+fi
+
 notify-send "Hyprland" "Theme: $CHOICE"

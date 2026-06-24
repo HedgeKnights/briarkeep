@@ -16,6 +16,7 @@ Themes: `hypr/themes/{catppuccin,forest,glass,minimal}/` — each dir contains h
 - `hyprlock.conf` — per-theme file symlinked to `~/.config/hypr/hyprlock.conf`; takes effect at next lock
 - `starship.toml` — per-theme file symlinked to `~/.config/starship.toml`; takes effect at next prompt
 - `dunst-colors.conf` — symlinked and reloaded via `dunstctl reload`
+- `steam-theme` — writes `millennium/config.json`; Millennium does NOT file-watch config (only QuickCSS is watched), so **Steam must be restarted manually** for the theme to load
 
 <!-- Forest theme waybar background was originally rgba(26,35,24) — too dark; changed to rgba(42,60,35) -->
 <!-- Spicetify first-time `spicetify apply` run manually; theme switcher handles all future switches -->
@@ -61,6 +62,15 @@ Themes live in `~/.config/spicetify/Themes/`: catppuccin (catppuccin/spicetify),
 `toolkit.legacyUserProfileCustomizations.stylesheets` must be true — written to the active profile's `user.js` as a one-time step (not stow-managed due to hash-named profile dir).
 Switcher discovers active profile from `~/.zen/installs.ini` (the `Locked=1` section's `Default=` value), copies `zen.css` to `<profile>/chrome/userChrome.css`, kills+relaunches zen-browser if running.
 
+## Steam / Millennium theme variants
+- catppuccin → `catppuccin-mocha` (millennium/themes/catppuccin-mocha/)
+- forest → `forest-dark`
+- glass → `glass-dark`
+- minimal → `minimal-dark`
+
+Themes override root CSS variables (menus, virtual gamepad overlay, progress bars, editor panels). The main library window uses CSS modules with generated class names that aren't practically overridable without a full maintained Millennium theme. Install one via Millennium's UI marketplace if more comprehensive theming is wanted.
+
+Theme dirs live in `~/.local/share/Steam/millennium/themes/` — not tracked in dotfiles git (Steam data dir).
+
 ## Not wired — deferred
-- **Steam**: Millennium wiring in progress
 - **Kitty**: low priority backup terminal, trivial to add when wanted
