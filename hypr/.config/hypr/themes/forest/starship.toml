@@ -1,0 +1,47 @@
+add_newline = false
+command_timeout = 1000
+
+format = "$directory$git_branch$git_status$cmd_duration$jobs$status\n$character"
+
+[directory]
+truncation_length = 0
+truncate_to_repo = true
+style = "bold #c8a84b"
+read_only = " "
+
+[git_branch]
+symbol = " "
+format = " [$symbol$branch]($style)"
+style = "dimmed"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style))"
+style = "dimmed"
+stashed = "≡"
+modified = "*"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+untracked = "?"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+
+[cmd_duration]
+min_time = 1500
+format = " [⏱ $duration]($style)"
+style = "dimmed"
+
+[jobs]
+symbol = "✦"
+format = " [$symbol$number]($style)"
+style = "dimmed"
+
+[status]
+disabled = false
+format = " [$status]($style)"
+style = "bold red"
+
+[character]
+success_symbol = "[❯](bold #7ab648)"
+error_symbol = "[❯](bold #e06c75)"
