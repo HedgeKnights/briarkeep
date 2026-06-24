@@ -1,0 +1,8 @@
+/* glass overrides — loaded after midnight theme, overrides any leftover opaque bg values */
+:root {
+    /* force semi-transparent backgrounds even where midnight theme sets solid ones */
+    --bg-4: hsla(232, 23%, 18%, 0.75) !important;
+    --bg-3: hsla(227, 23%, 15%, 0.75) !important;
+    --bg-2: hsla(230, 19%, 26%, 0.80) !important;
+    --bg-1: hsla(230, 17%, 34%, 0.80) !important;
+}

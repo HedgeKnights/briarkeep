@@ -59,3 +59,11 @@ hl.animation({ leaf = "windowsOut",  enabled = true, speed = 7,  bezier = "myBez
 hl.animation({ leaf = "border",      enabled = true, speed = 10, bezier = "myBezier" })
 hl.animation({ leaf = "fade",        enabled = true, speed = 7,  bezier = "myBezier" })
 hl.animation({ leaf = "workspaces",  enabled = true, speed = 6,  bezier = "myBezier" })
+
+-- Per-app opacity so compositor blur bleeds through (blur is globally on; opacity creates the transparency)
+hl.window_rule({ match = { class = "^vesktop$" }, opacity = "0.92 override" })
+hl.window_rule({ match = { class = "^zen$" },     opacity = "0.92 override" })
+-- real wm_class is "Spotify" (capital S)
+hl.window_rule({ match = { class = "^Spotify$" }, opacity = "0.92 override" })
+-- Steam shell only; steam_app_ games excluded to avoid gameplay interference
+hl.window_rule({ match = { class = "^steam$" },   opacity = "0.88 override" })

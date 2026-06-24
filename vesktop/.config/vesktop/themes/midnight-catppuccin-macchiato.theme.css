@@ -1,0 +1,134 @@
+/**
+ * @name midnight (catppuccin macchiato)
+ * @description a dark, customizable discord theme. based on catppuccin macchiato.
+ * @author refact0r, 311time
+ * @version 2.1.1
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-catppuccin-macchiato.theme.css
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+
+body {
+    --font: 'JetBrains Mono Nerd Font';
+    --code-font: '';
+    font-weight: 400;
+
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 1px;
+
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+    --border-hover-transition: 0.2s ease;
+
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    --custom-window-controls: on;
+    --window-control-size: 14px;
+
+    --custom-dms-icon: hide;
+    --dms-icon-svg-url: url('https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: image;
+    --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+    --background-image: off;
+    --background-image-url: url('');
+
+    /* glass transparency — Hyprland compositor blur shows through when these are on */
+    --transparency-tweaks: on;
+    --remove-bg-layer: on;
+    --panel-blur: on;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    --custom-chatbar: off;
+    --chatbar-height: 47px;
+
+    --small-user-panel: on;
+}
+
+/* color options — catppuccin macchiato */
+:root {
+    --colors: on;
+
+    --text-0: var(--bg-4);
+    --text-1: hsl(227, 68%, 95%);
+    --text-2: #cad3f5;
+    --text-3: #b8c0e0;
+    --text-4: #8087a2;
+    --text-5: #5b6078;
+
+    /* semi-transparent backgrounds so Hyprland blur shows through */
+    --bg-1: hsla(230, 17%, 34%, 0.80);
+    --bg-2: hsla(230, 19%, 26%, 0.80);
+    --bg-3: hsla(227, 23%, 15%, 0.75);
+    --bg-4: hsla(232, 23%, 18%, 0.75);
+    --hover: hsla(230, 15%, 53%, 0.1);
+    --active: hsla(230, 15%, 53%, 0.2);
+    --active-2: hsla(230, 15%, 53%, 0.3);
+    --message-hover: hsla(230, 0%, 0%, 0.1);
+
+    --accent-1: var(--purple-1);
+    --accent-2: var(--purple-2);
+    --accent-3: var(--purple-3);
+    --accent-4: var(--purple-4);
+    --accent-5: var(--purple-5);
+    --accent-new: var(--accent-2);
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--purple-2);
+    --offline: var(--text-4);
+
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--active);
+    --button-border: hsl(230, 0%, 100%, 0.1);
+
+    /* catppuccin macchiato base colors */
+    --red-1: hsl(351deg, 74%, 78%);
+    --red-2: hsl(351deg, 74%, 73%);
+    --red-3: hsl(351deg, 74%, 73%);
+    --red-4: hsl(351deg, 74%, 68%);
+    --red-5: hsl(351deg, 74%, 63%);
+
+    --green-1: hsl(105deg, 48%, 77%);
+    --green-2: hsl(105deg, 48%, 72%);
+    --green-3: hsl(105deg, 48%, 72%);
+    --green-4: hsl(105deg, 48%, 67%);
+    --green-5: hsl(105deg, 48%, 62%);
+
+    --blue-1: hsl(199deg, 66%, 74%);
+    --blue-2: hsl(199deg, 66%, 69%);
+    --blue-3: hsl(199deg, 66%, 69%);
+    --blue-4: hsl(199deg, 66%, 64%);
+    --blue-5: hsl(199deg, 66%, 59%);
+
+    --yellow-1: hsl(40deg, 70%, 83%);
+    --yellow-2: hsl(40deg, 70%, 78%);
+    --yellow-3: hsl(40deg, 70%, 78%);
+    --yellow-4: hsl(40deg, 70%, 73%);
+    --yellow-5: hsl(40deg, 70%, 68%);
+
+    --purple-1: hsl(267deg, 83%, 85%);
+    --purple-2: hsl(267deg, 83%, 80%);
+    --purple-3: hsl(267deg, 83%, 80%);
+    --purple-4: hsl(267deg, 83%, 75%);
+    --purple-5: hsl(267deg, 83%, 70%);
+}
