@@ -46,9 +46,18 @@ sudo cp ~/Images/wallpapers/catppuccin.jpg /usr/share/sddm/themes/maldives/backg
 ```
 Current: maldives theme + catppuccin.jpg wallpaper.
 
-## Not wired — needs external setup
-- **Spotify**: `~/.config/spicetify/Themes/` is empty; catppuccin-spicetify, Dribbblish, Sleek, Matte themes must be installed before switching works
-- **GTK/Thunar**: all themes use Adwaita-dark; per-theme GTK requires installing matching themes (e.g. catppuccin-gtk)
+## GTK theme variants
+- catppuccin → `catppuccin-mocha-mauve-standard+default` (mauve accent matches waybar/hypr palette)
+- forest → `Adwaita-dark` (no forest GTK theme available)
+- glass → `Adwaita-dark`
+- minimal → `rose-pine-moon-gtk`
+
+## Spicetify notes
+Themes live in `~/.config/spicetify/Themes/`: catppuccin (catppuccin/spicetify), Dribbblish/Sleek/Matte (spicetify/spicetify-themes).
+`overwrite_assets = 1` required globally (catppuccin and Dribbblish both have `assets/` dirs).
+`inject_theme_js = 1` required globally (catppuccin and Dribbblish both have `theme.js`).
+
+## Not wired — deferred
 - **Steam**: needs Millennium — deferred (complex)
 - **Zen browser**: deferred
 - **Kitty**: low priority backup terminal, trivial to add when wanted
