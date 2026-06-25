@@ -1,0 +1,11 @@
+{
+    "name": "Glass Dark",
+    "description": "Dark glass palette for Steam",
+    "version": "1.0.0",
+    "Patches": [
+        {
+            "MatchRegexString": ".*",
+            "TargetCss": "main.css"
+        }
+    ]
+}

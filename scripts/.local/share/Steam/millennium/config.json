@@ -1,1 +1,7 @@
-{"themes":{"activeTheme":"catppuccin-macchiato","allowedStyles":true,"allowedScripts":true}}
+{
+    "themes": {
+        "activeTheme": "catppuccin-mocha",
+        "allowedStyles": true,
+        "allowedScripts": true
+    }
+}

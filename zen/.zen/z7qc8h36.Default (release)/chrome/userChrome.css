@@ -1,10 +1,9 @@
-/* zen userChrome — catppuccin macchiato */
+/* zen userChrome — catppuccin mocha */
 :root {
-  --zen-primary-color: #c6a0f6 !important;
-  --zen-toolbar-element-bg: rgba(198, 160, 246, 0.1) !important;
-  --zen-toolbar-element-bg-hover: rgba(198, 160, 246, 0.2) !important;
-  --toolbar-bgcolor: #1e2030 !important;
-  --lwt-text-color: #cad3f5 !important;
-  --toolbarbutton-hover-background: rgba(198, 160, 246, 0.15) !important;
-  --zen-main-browser-font: 'JetBrains Mono Nerd Font', monospace !important;
+  --zen-primary-color: #cba6f7 !important;
+  --zen-toolbar-element-bg: rgba(203, 166, 247, 0.1) !important;
+  --zen-toolbar-element-bg-hover: rgba(203, 166, 247, 0.2) !important;
+  --toolbar-bgcolor: #181825 !important;
+  --lwt-text-color: #cdd6f4 !important;
+  --toolbarbutton-hover-background: rgba(203, 166, 247, 0.15) !important;
 }

@@ -44,3 +44,29 @@ wofi/.config/wofi/style.css
 # Python
 __pycache__/
 
+# Steam runtime — track only Millennium config and themes
+scripts/.local/share/Steam/**
+!scripts/.local/share/Steam/millennium/
+!scripts/.local/share/Steam/millennium/**
+
+# Local share runtime dirs (not dotconfig, not scripts)
+scripts/.local/share/Trash/
+scripts/.local/share/applications/
+scripts/.local/share/claude/
+scripts/.local/share/hyprland/
+scripts/.local/share/icons/
+scripts/.local/share/mime/
+scripts/.local/share/nvim/
+scripts/.local/share/pnpm/
+scripts/.local/share/recently-used.xbel
+scripts/.local/share/spotify-launcher/
+scripts/.local/share/vulkan/
+scripts/.local/state/
+
+# Systemd runtime-created symlink dirs
+systemd/.config/systemd/user/sockets.target.wants/
+
+# Symlinks to external/installed binaries — not real dotfiles
+scripts/.local/bin/claude
+scripts/.local/bin/hyprconf2lua
+

@@ -1,8 +1,26 @@
-/* glass overrides — loaded after midnight theme, overrides any leftover opaque bg values */
-:root {
-    /* force semi-transparent backgrounds even where midnight theme sets solid ones */
-    --bg-4: hsla(232, 23%, 18%, 0.75) !important;
-    --bg-3: hsla(227, 23%, 15%, 0.75) !important;
-    --bg-2: hsla(230, 19%, 26%, 0.80) !important;
-    --bg-1: hsla(230, 17%, 34%, 0.80) !important;
+/* Catppuccin Mocha */
+.theme-dark {
+    --background-primary: #1e1e2e;
+    --background-secondary: #181825;
+    --background-secondary-alt: #11111b;
+    --background-tertiary: #11111b;
+    --background-accent: #313244;
+    --background-floating: #181825;
+    --background-nested-floating: #1e1e2e;
+    --channeltextarea-background: #313244;
+
+    --text-normal: #cdd6f4;
+    --text-muted: #6c7086;
+    --text-link: #89b4fa;
+    --header-primary: #cdd6f4;
+    --header-secondary: #a6adc8;
+
+    --interactive-normal: #cdd6f4;
+    --interactive-hover: #ffffff;
+    --interactive-active: #cba6f7;
+    --interactive-muted: #45475a;
+
+    --brand-experiment: #cba6f7;
+    --brand-500: #cba6f7;
+    --focus-primary: #cba6f7;
 }

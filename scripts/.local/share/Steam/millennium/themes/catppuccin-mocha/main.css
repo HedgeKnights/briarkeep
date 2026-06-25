@@ -1,0 +1,19 @@
+:root {
+    --main-text-color: #cdd6f4;
+    --main-light-blue-background: #cba6f7;
+    --main-top-image-bg: #1e1e2e;
+    --main-editor-bg-color: #313244;
+    --main-editor-text-color: #cdd6f4;
+    --main-editor-input-bg-color: #181825;
+    --main-editor-section-title-color: #cba6f7;
+    --menu-background: #181825;
+    --virtualmenu-accent: #cba6f7;
+    --virtualmenu-bg: #1e1e2e;
+    --virtualmenu-bg-hover: #313244;
+    --virtualmenu-fg: #cdd6f4;
+    --virtualmenupointer-color: #cba6f7;
+    --color-progress-bar-foreground: #cba6f7;
+    --touchmenuicon-bg: #181825;
+    --touchmenuicon-fg: #cdd6f4;
+    --indicatorColor: #cba6f7;
+}

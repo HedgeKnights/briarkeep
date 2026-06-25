@@ -1,0 +1,11 @@
+{
+    "name": "Forest Dark",
+    "description": "Dark forest green palette for Steam",
+    "version": "1.0.0",
+    "Patches": [
+        {
+            "MatchRegexString": ".*",
+            "TargetCss": "main.css"
+        }
+    ]
+}

@@ -1,4 +1,17 @@
-# Exclude Zen profile data; track only chrome CSS and user.js
+# Exclude Zen profile data; track only chrome/userChrome.css and user.js
+
+# z7qc8h36.Default (release) profile — exclude everything except our CSS/prefs
+.zen/z7qc8h36.Default (release)/*
+!.zen/z7qc8h36.Default (release)/chrome/
+.zen/z7qc8h36.Default (release)/chrome/*
+!.zen/z7qc8h36.Default (release)/chrome/userChrome.css
+!.zen/z7qc8h36.Default (release)/user.js
+
+# Zen root profile manager files
+.zen/installs.ini
+.zen/Profile Groups/
+
+# default profile (legacy)
 .zen/default/addonStartup.json.lz4
 .zen/default/bookmarkbackups/
 .zen/default/bookmarks.html

@@ -1,0 +1,11 @@
+{
+    "name": "Minimal Dark",
+    "description": "Minimal dark palette for Steam",
+    "version": "1.0.0",
+    "Patches": [
+        {
+            "MatchRegexString": ".*",
+            "TargetCss": "main.css"
+        }
+    ]
+}

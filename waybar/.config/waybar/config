@@ -9,7 +9,7 @@
 
   "hyprland/workspaces": {
     "format": "{name}",
-    "on-click": "activate"
+    "on-click": "hyprctl dispatch workspace"
   },
 
   "clock": {
