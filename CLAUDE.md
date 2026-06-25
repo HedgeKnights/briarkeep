@@ -12,14 +12,16 @@
 - ghostty/ — primary terminal; kitty/ — backup, skip for now
 - nvim/ — neovim (lazy.nvim); shell/ — bashrc, starship, gitconfig
 - gtk/, gammastep/, thunar/, systemd/, btop/, htop/
-- vesktop/ — Vesktop (Discord) theme; midnight-catppuccin-macchiato.theme.css in .config/vesktop/themes/, glass quickCss in .config/vesktop/settings/quickCss.css
-- zen/ — Zen browser; active profile chrome at .zen/z7qc8h36.Default (release)/chrome/userChrome.css
-- scripts/ — includes Steam Millennium themes at .local/share/Steam/millennium/themes/ (active: catppuccin-macchiato)
+- vesktop/ — Vesktop (Discord); midnight-catppuccin-macchiato.theme.css in .config/vesktop/themes/ (Vencord auto-loads), glass overrides in .config/vesktop/settings/quickCss.css
+- zen/ — Zen browser; ~/.zen is a whole-dir symlink to dotfiles/zen/.zen; active profile: z7qc8h36.Default (release); userChrome.css + user.js live at .zen/z7qc8h36.Default (release)/chrome/ and .zen/z7qc8h36.Default (release)/
+- scripts/ — Steam Millennium themes at .local/share/Steam/millennium/themes/ (active: catppuccin-macchiato); themes dir shares inodes with dotfiles so writes to dotfiles go live immediately
 
 ## Theme — glass + Catppuccin Macchiato
-- Active theme: glass/hypr.lua (dofile'd from themes/current symlink → themes/glass)
+- Active theme: glass/hypr.lua (dofile'd from themes/current → themes/glass)
 - Per-app opacity rules in glass/hypr.lua: vesktop 0.92, zen 0.92, Spotify 0.92, steam 0.88
-- Spotify: spicetify catppuccin theme, macchiato color scheme
+- Spotify wm_class is "Spotify" (capital S) — lowercase window rules won't match
+- Zen: Transparent Zen mod (v1.17.16) installed and enabled; user.js sets browser.tabs.allow_transparent_browser and zen.widget.linux.transparency = true for real compositor glass
+- Spotify: spicetify catppuccin theme, macchiato color scheme (Glassify CDN is dead — not installable)
 - Font everywhere: JetBrains Mono Nerd Font
 
 ## System
