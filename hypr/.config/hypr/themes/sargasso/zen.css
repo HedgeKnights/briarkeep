@@ -1,0 +1,9 @@
+/* zen userChrome — sargasso sea */
+:root {
+  --zen-primary-color: #2abcbc !important;
+  --zen-toolbar-element-bg: rgba(42, 188, 188, 0.1) !important;
+  --zen-toolbar-element-bg-hover: rgba(42, 188, 188, 0.2) !important;
+  --toolbar-bgcolor: #080c16 !important;
+  --lwt-text-color: #c0d8e8 !important;
+  --toolbarbutton-hover-background: rgba(42, 188, 188, 0.15) !important;
+}

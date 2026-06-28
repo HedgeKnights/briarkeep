@@ -1,0 +1,15 @@
+.theme-dark {
+  --background-primary: #080c16;
+  --background-primary-alt: #0c1220;
+  --background-secondary: #0c1220;
+  --background-secondary-alt: #080c16;
+  --background-modifier-border: #1c2840;
+  --text-normal: #c0d8e8;
+  --text-muted: #7aacbe;
+  --text-faint: #4a7085;
+  --text-accent: #2abcbc;
+  --text-accent-hover: #40d0d0;
+  --interactive-accent: #2abcbc;
+  --interactive-accent-hover: #40d0d0;
+  --interactive-accent-rgb: 42, 188, 188;
+}

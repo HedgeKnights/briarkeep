@@ -1,0 +1,26 @@
+/* Sargasso Sea */
+.theme-dark {
+    --background-primary: rgba(8, 12, 22, 0.92);
+    --background-secondary: rgba(12, 18, 32, 0.94);
+    --background-secondary-alt: rgba(8, 12, 22, 0.97);
+    --background-tertiary: rgba(4, 8, 16, 0.97);
+    --background-accent: rgba(42, 188, 188, 0.2);
+    --background-floating: rgba(12, 18, 32, 0.95);
+    --background-nested-floating: rgba(16, 24, 40, 0.9);
+    --channeltextarea-background: rgba(20, 28, 46, 0.75);
+
+    --text-normal: #c0d8e8;
+    --text-muted: #4a7085;
+    --text-link: #2abcbc;
+    --header-primary: #c0d8e8;
+    --header-secondary: #7aacbe;
+
+    --interactive-normal: #7aacbe;
+    --interactive-hover: #c0d8e8;
+    --interactive-active: #c49040;
+    --interactive-muted: #2a3d55;
+
+    --brand-experiment: #2abcbc;
+    --brand-500: #2abcbc;
+    --focus-primary: #c49040;
+}
