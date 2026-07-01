@@ -12,7 +12,7 @@
 - ghostty/ — primary terminal; kitty/ — backup, skip for now
 - nvim/ — neovim (lazy.nvim); shell/ — bashrc, starship, gitconfig
 - gtk/, gammastep/, thunar/, systemd/, btop/, htop/
-- vesktop/ — Vesktop (Discord); midnight-catppuccin-mocha.theme.css in .config/vesktop/themes/ (Vencord auto-loads), mocha color overrides in .config/vesktop/settings/quickCss.css
+- vesktop/ — Vesktop (Discord); midnight-catppuccin-macchiato.theme.css in .config/vesktop/themes/ (Vencord auto-loads as base structural theme), color overrides in .config/vesktop/settings/quickCss.css (managed by theme-switcher)
 - zen/ — Zen browser; ~/.zen is a whole-dir symlink to dotfiles/zen/.zen; active profile: z7qc8h36.Default (release); userChrome.css + user.js live at .zen/z7qc8h36.Default (release)/chrome/ and .zen/z7qc8h36.Default (release)/
 - scripts/ — Steam Millennium themes at .local/share/Steam/millennium/themes/ (active: catppuccin-mocha); themes dir shares inodes with dotfiles so writes to dotfiles go live immediately
 
