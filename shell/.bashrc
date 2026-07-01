@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# --- SSH prompt override (remove block to revert) ---
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export STARSHIP_CONFIG="$HOME/.config/starship-ssh.toml"
+fi
+# ---
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
