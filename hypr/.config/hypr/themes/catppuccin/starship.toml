@@ -6,7 +6,7 @@ format = "$directory$git_branch$git_status$cmd_duration$jobs$status\n$character"
 [directory]
 truncation_length = 0
 truncate_to_repo = true
-style = "bold #89b4fa"
+style = "bold #8caaee"
 read_only = " "
 
 [git_branch]
@@ -43,5 +43,5 @@ format = " [$status]($style)"
 style = "bold red"
 
 [character]
-success_symbol = "[❯](bold #cba6f7)"
-error_symbol = "[❯](bold #f38ba8)"
+success_symbol = "[❯](bold #ca9ee6)"
+error_symbol = "[❯](bold #e78284)"

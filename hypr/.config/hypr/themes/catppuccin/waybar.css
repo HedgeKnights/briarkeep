@@ -6,9 +6,9 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.9);
-    border-bottom: 2px solid #cba6f7;
-    color: #cdd6f4;
+    background: rgba(48, 52, 70, 0.9);
+    border-bottom: 2px solid #ca9ee6;
+    color: #c6d0f5;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -16,19 +16,19 @@ window#waybar {
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: #6c7086;
+    color: #737994;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.active {
-    color: #cdd6f4;
-    border-bottom: 3px solid #cba6f7;
+    color: #c6d0f5;
+    border-bottom: 3px solid #ca9ee6;
 }
 
 #clock, #pulseaudio, #network, #cpu, #memory, #tray {
     padding: 0 10px;
     margin: 4px 0;
-    background: rgba(49, 50, 68, 0.8);
+    background: rgba(65, 69, 89, 0.8);
     border-radius: 8px;
-    color: #cdd6f4;
+    color: #c6d0f5;
 }

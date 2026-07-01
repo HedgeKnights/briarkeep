@@ -4,7 +4,7 @@
 
 ---@module 'hl'
 
--- --- Catppuccin Mocha Theme ---
+-- --- Catppuccin Frappé Theme ---
 
 hl.config({
     general = {
@@ -12,8 +12,8 @@ hl.config({
         gaps_out = 12,
         border_size = 2,
         col = {
-            active_border = { colors = { "rgba(cba6f7ee)", "rgba(89b4faee)" }, angle = 45 },
-            inactive_border = "rgba(313244aa)",
+            active_border = { colors = { "rgba(ca9ee6ee)", "rgba(8caaeeee)" }, angle = 45 },
+            inactive_border = "rgba(414559aa)",
         },
     },
 })
@@ -31,7 +31,7 @@ hl.config({
             enabled = true,
             range = 12,
             render_power = 3,
-            color = "rgba(1e1e2eee)",
+            color = "rgba(303446ee)",
         },
     },
 })

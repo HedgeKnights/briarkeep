@@ -4,8 +4,8 @@
 }
 
 window {
-  background-color: #1e1e2e;
-  border: 2px solid #cba6f7;
+  background-color: #303446;
+  border: 2px solid #ca9ee6;
   border-radius: 10px;
 }
 
@@ -16,15 +16,15 @@ window {
 #input {
   margin-bottom: 8px;
   padding: 5px 7px;
-  background-color: #313244;
-  color: #cdd6f4;
+  background-color: #414559;
+  color: #c6d0f5;
   border: none;
   border-radius: 6px;
   outline: none;
 }
 
 #input:focus {
-  border: 1px solid #cba6f7;
+  border: 1px solid #ca9ee6;
 }
 
 #entry {
@@ -33,15 +33,15 @@ window {
 }
 
 #entry:selected {
-  background-color: #45475a;
+  background-color: #51576d;
 }
 
 #text {
-  color: #cdd6f4;
+  color: #c6d0f5;
 }
 
 #entry:selected #text {
-  color: #cba6f7;
+  color: #ca9ee6;
 }
 
 #expander {
