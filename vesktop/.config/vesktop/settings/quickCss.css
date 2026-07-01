@@ -1,26 +1,26 @@
-/* Catppuccin Mocha */
+/* Sargasso Sea */
 .theme-dark {
-    --background-primary: #1e1e2e;
-    --background-secondary: #181825;
-    --background-secondary-alt: #11111b;
-    --background-tertiary: #11111b;
-    --background-accent: #313244;
-    --background-floating: #181825;
-    --background-nested-floating: #1e1e2e;
-    --channeltextarea-background: #313244;
+    --background-primary: rgba(8, 12, 22, 0.92);
+    --background-secondary: rgba(12, 18, 32, 0.94);
+    --background-secondary-alt: rgba(8, 12, 22, 0.97);
+    --background-tertiary: rgba(4, 8, 16, 0.97);
+    --background-accent: rgba(42, 188, 188, 0.2);
+    --background-floating: rgba(12, 18, 32, 0.95);
+    --background-nested-floating: rgba(16, 24, 40, 0.9);
+    --channeltextarea-background: rgba(20, 28, 46, 0.75);
 
-    --text-normal: #cdd6f4;
-    --text-muted: #6c7086;
-    --text-link: #89b4fa;
-    --header-primary: #cdd6f4;
-    --header-secondary: #a6adc8;
+    --text-normal: #c0d8e8;
+    --text-muted: #4a7085;
+    --text-link: #2abcbc;
+    --header-primary: #c0d8e8;
+    --header-secondary: #7aacbe;
 
-    --interactive-normal: #cdd6f4;
-    --interactive-hover: #ffffff;
-    --interactive-active: #cba6f7;
-    --interactive-muted: #45475a;
+    --interactive-normal: #7aacbe;
+    --interactive-hover: #c0d8e8;
+    --interactive-active: #c49040;
+    --interactive-muted: #2a3d55;
 
-    --brand-experiment: #cba6f7;
-    --brand-500: #cba6f7;
-    --focus-primary: #cba6f7;
+    --brand-experiment: #2abcbc;
+    --brand-500: #2abcbc;
+    --focus-primary: #c49040;
 }
